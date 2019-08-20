@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/ืnickname_edit" android:hint="@string/what_is_your_nickname"
+            android:id="@+id/nickname_edit" android:hint="@string/what_is_your_nickname"
             android:textAlignment="center" style="@style/NameStyle"/>
     <Button
             android:text="@string/done"
