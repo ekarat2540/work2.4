@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         editText.visibility = View.GONE
         nicknameTextView.visibility = View.VISIBLE
 
-        val doneButton = binding.doneButton
+
         doneButton.visibility = View.GONE
 //hide the keyboard
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
