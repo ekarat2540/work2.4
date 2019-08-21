@@ -13,7 +13,7 @@ import com.example.arjankob.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private var myName:MyName = MyName("Ekarat Sukprasert")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 updateNickName(it)
             }
         }
+        binding.myName =  myName
 
     }
 
@@ -50,12 +51,13 @@ class MainActivity : AppCompatActivity() {
         //val editText = binding.nicknameEdit
         //val nicknameTextView = binding.nicknameText
         binding.apply {
-            nicknameText.text = nicknameEdit.text
+            myName?.nickname = nicknameEdit.text.toString()
             nicknameEdit.visibility = View.GONE
             nicknameText.visibility = View.VISIBLE
 
             //val doneButton = binding.doneButton
             doneButton.visibility = View.GONE
+            invalidateAll()
 //hide the keyboard
             val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(view.windowToken,0)
